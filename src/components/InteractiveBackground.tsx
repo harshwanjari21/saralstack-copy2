@@ -1,36 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-interface Particle {
-  x: number;
-  y: number;
-  baseX: number;
-  baseY: number;
-  size: number;
-  speed: number;
-}
-
 const InteractiveBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [particles, setParticles] = useState<Particle[]>([]);
-
-  useEffect(() => {
-    const generateParticles = () => {
-      const newParticles: Particle[] = [];
-      for (let i = 0; i < 50; i++) {
-        newParticles.push({
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          baseX: Math.random() * 100,
-          baseY: Math.random() * 100,
-          size: Math.random() * 4 + 2,
-          speed: Math.random() * 0.5 + 0.1,
-        });
-      }
-      setParticles(newParticles);
-    };
-    generateParticles();
-  }, []);
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -49,67 +21,126 @@ const InteractiveBackground = () => {
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden">
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      {/* Noise texture overlay */}
+      <div className="absolute inset-0 opacity-[0.015] bg-noise" />
       
-      {/* Gradient orbs */}
+      {/* Large geometric shapes */}
       <div
-        className="absolute w-[600px] h-[600px] rounded-full bg-gradient-radial from-accent/30 via-accent/5 to-transparent blur-3xl transition-transform duration-700 ease-out"
+        className="absolute w-[800px] h-[800px] -right-[200px] -top-[200px] transition-transform duration-1000 ease-out"
         style={{
-          left: `${mousePosition.x - 15}%`,
-          top: `${mousePosition.y - 15}%`,
+          transform: `translate(${(mousePosition.x - 50) * 0.08}px, ${(mousePosition.y - 50) * 0.08}px)`,
         }}
-      />
+      >
+        <div className="w-full h-full rounded-full border border-accent/10 animate-spin-slow" />
+        <div className="absolute inset-8 rounded-full border border-accent/20 animate-spin-reverse" />
+        <div className="absolute inset-16 rounded-full border border-accent/10" />
+      </div>
+
+      {/* Accent blob */}
       <div
-        className="absolute w-[400px] h-[400px] rounded-full bg-gradient-radial from-primary/20 via-primary/5 to-transparent blur-3xl transition-transform duration-1000 ease-out"
+        className="absolute w-[600px] h-[600px] bg-gradient-radial from-accent/20 via-accent/5 to-transparent blur-3xl transition-all duration-700 ease-out pointer-events-none"
         style={{
-          left: `${mousePosition.x + 10}%`,
-          top: `${mousePosition.y + 10}%`,
+          left: `${mousePosition.x - 20}%`,
+          top: `${mousePosition.y - 20}%`,
         }}
       />
 
-      {/* Floating particles */}
-      {particles.map((particle, index) => {
-        const distanceX = (mousePosition.x - particle.baseX) * particle.speed * 0.3;
-        const distanceY = (mousePosition.y - particle.baseY) * particle.speed * 0.3;
-        
-        return (
-          <div
-            key={index}
-            className="absolute rounded-full bg-accent/40 transition-all duration-500 ease-out"
-            style={{
-              left: `${particle.baseX + distanceX}%`,
-              top: `${particle.baseY + distanceY}%`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-            }}
-          />
-        );
-      })}
-
-      {/* Animated lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-10">
+      {/* Floating geometric elements */}
+      <svg className="absolute inset-0 w-full h-full" style={{ filter: 'url(#glow)' }}>
         <defs>
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0" />
-            <stop offset="50%" stopColor="hsl(var(--accent))" stopOpacity="1" />
-            <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
-          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
-        {[...Array(8)].map((_, i) => (
-          <line
-            key={i}
-            x1={`${10 + i * 12}%`}
-            y1="0%"
-            x2={`${20 + i * 12}%`}
-            y2="100%"
-            stroke="url(#lineGradient)"
-            strokeWidth="1"
-            className="animate-pulse"
-            style={{ animationDelay: `${i * 0.2}s` }}
-          />
-        ))}
+        
+        {/* Animated triangles */}
+        <polygon
+          points="100,50 150,130 50,130"
+          fill="none"
+          stroke="hsl(var(--accent))"
+          strokeWidth="1"
+          opacity="0.3"
+          className="animate-float-1"
+          style={{
+            transform: `translate(${(mousePosition.x - 50) * 0.3}px, ${(mousePosition.y - 50) * 0.3}px)`,
+            transformOrigin: 'center',
+          }}
+        />
+        <polygon
+          points="85%,70% 90%,85% 80%,85%"
+          fill="none"
+          stroke="hsl(var(--highlight))"
+          strokeWidth="1"
+          opacity="0.4"
+          className="animate-float-2"
+        />
+        
+        {/* Animated squares */}
+        <rect
+          x="10%"
+          y="60%"
+          width="40"
+          height="40"
+          fill="none"
+          stroke="hsl(var(--accent))"
+          strokeWidth="1"
+          opacity="0.2"
+          className="animate-float-3"
+          style={{
+            transform: `rotate(${mousePosition.x * 0.2}deg)`,
+            transformOrigin: 'center',
+          }}
+        />
+        <rect
+          x="75%"
+          y="20%"
+          width="60"
+          height="60"
+          fill="none"
+          stroke="hsl(var(--highlight))"
+          strokeWidth="1"
+          opacity="0.3"
+          className="animate-float-1"
+        />
+
+        {/* Connection lines */}
+        <line
+          x1="20%"
+          y1="30%"
+          x2="40%"
+          y2="50%"
+          stroke="hsl(var(--accent))"
+          strokeWidth="1"
+          opacity="0.1"
+          strokeDasharray="5,5"
+          className="animate-dash"
+        />
+        <line
+          x1="60%"
+          y1="80%"
+          x2="80%"
+          y2="60%"
+          stroke="hsl(var(--highlight))"
+          strokeWidth="1"
+          opacity="0.15"
+          strokeDasharray="5,5"
+          className="animate-dash"
+        />
       </svg>
+
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-32 h-32">
+        <div className="absolute top-8 left-8 w-px h-16 bg-gradient-to-b from-accent/50 to-transparent" />
+        <div className="absolute top-8 left-8 w-16 h-px bg-gradient-to-r from-accent/50 to-transparent" />
+      </div>
+      <div className="absolute bottom-0 right-0 w-32 h-32">
+        <div className="absolute bottom-8 right-8 w-px h-16 bg-gradient-to-t from-highlight/50 to-transparent" />
+        <div className="absolute bottom-8 right-8 w-16 h-px bg-gradient-to-l from-highlight/50 to-transparent" />
+      </div>
     </div>
   );
 };
