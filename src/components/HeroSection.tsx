@@ -6,11 +6,11 @@ import CodeBlock from './CodeBlock';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative h-screen flex items-center overflow-hidden bg-background">
       <InteractiveBackground />
       
       {/* Main content */}
-      <div className="relative z-10 container mx-auto px-6 py-20">
+      <div className="relative z-10 container mx-auto px-6 py-12">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left side - Typography */}
           <div className="lg:col-span-7 space-y-8">
@@ -46,40 +46,16 @@ const HeroSection = () => {
               <div className="h-px flex-1 max-w-[60px] bg-gradient-to-l from-highlight to-transparent" />
             </div>
 
-            {/* Description */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              Premium IT solutions at <span className="text-highlight font-semibold">startup-friendly prices</span>. 
-              We don't just build for you — we build <span className="text-accent font-semibold">with you</span>, 
-              every step of the way.
-            </p>
-
             {/* CTA Section */}
-            <div className="flex flex-wrap items-center gap-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="flex flex-wrap items-center gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button variant="hero" size="lg" className="group text-base">
                 <span>Start Your Project</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-3">
-                  {[0, 1, 2].map((i) => (
-                    <div
-                      key={i}
-                      className="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-accent/20 to-highlight/20 flex items-center justify-center text-xs font-bold text-foreground/70"
-                    >
-                      {['S', 'A', 'R'][i]}
-                    </div>
-                  ))}
-                </div>
-                <div className="text-sm">
-                  <div className="font-semibold text-foreground">Team Ready</div>
-                  <div className="text-muted-foreground">Let's build together</div>
-                </div>
-              </div>
             </div>
 
             {/* USP Pills */}
-            <div className="flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               {[
                 { text: 'Affordable Rates', icon: '₹' },
                 { text: 'Agile Process', icon: '⚡' },
@@ -104,12 +80,6 @@ const HeroSection = () => {
               <div className="absolute -bottom-4 -left-4 w-16 h-16 border border-highlight/20 rotate-45" />
               
               <CodeBlock />
-              
-              {/* Floating stats */}
-              <div className="absolute -bottom-6 -right-6 glass-card px-4 py-3 rounded-xl animate-float-3d">
-                <div className="text-2xl font-bold text-accent">100%</div>
-                <div className="text-xs text-muted-foreground">Client Satisfaction Goal</div>
-              </div>
             </div>
           </div>
         </div>

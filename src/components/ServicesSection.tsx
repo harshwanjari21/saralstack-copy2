@@ -4,15 +4,15 @@ const services = [
   {
     icon: Globe,
     title: 'Web Development',
-    description: 'Modern, responsive websites and web applications built with cutting-edge technologies. From landing pages to complex platforms.',
-    tags: ['React', 'Next.js', 'Node.js'],
+    description: 'Scalable web solutions engineered for performance and growth. We transform your vision into powerful digital experiences that captivate users.',
+    tags: ['React', 'Next.js', 'Node.js', 'Django', 'Flask'],
     color: 'accent',
   },
   {
     icon: Smartphone,
     title: 'Mobile Apps',
     description: 'Native and cross-platform mobile applications for iOS and Android that deliver exceptional user experiences.',
-    tags: ['React Native', 'Flutter', 'iOS/Android'],
+    tags: ['React Native'],
     color: 'highlight',
   },
   {
