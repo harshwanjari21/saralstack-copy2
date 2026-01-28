@@ -21,7 +21,7 @@ const AboutSection = () => {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-[18px] text-gray-200 font-medium text-muted-foreground">About Saral<span className='text-green-400'>Stack</span></span>
+              <span className="text-[24px] text-gray-300 font-medium text-muted-foreground">About SaralStack</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">

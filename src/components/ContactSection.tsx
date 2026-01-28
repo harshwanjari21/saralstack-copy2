@@ -62,7 +62,7 @@ const ContactSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-[18px] text-gray-200 font-medium text-muted-foreground">Get In Touch</span>
+            <span className="text-[24px] text-gray-300 font-medium text-muted-foreground">Get In Touch</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-foreground">Let's Build </span>
@@ -181,23 +181,6 @@ const ContactSection = () => {
                 </a>
               ))}
             </div>
-
-            {/* Social links */}
-            {/* <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Follow Us</h3>
-              <div className="flex gap-3">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-12 h-12 rounded-xl bg-secondary/50 border border-border/50 flex items-center justify-center hover:bg-accent/10 hover:border-accent/50 hover:scale-110 transition-all"
-                  >
-                    <social.icon className="w-5 h-5 text-foreground" />
-                  </a>
-                ))}
-              </div>
-            </div> */}
 
             {/* Quick response promise */}
             <div className="glass-card rounded-2xl p-6 border-l-4 border-highlight">
