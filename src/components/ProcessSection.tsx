@@ -50,7 +50,7 @@ const ProcessSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
             <span className="w-2 h-2 rounded-full bg-highlight animate-pulse" />
-            <span className="text-sm font-medium text-muted-foreground">How We Work</span>
+            <span className="text-[18px] text-gray-200 font-medium text-muted-foreground">How We Work</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-foreground">Our Agile </span>
@@ -83,7 +83,7 @@ const ProcessSection = () => {
                 <div className="glass-card rounded-2xl p-6 md:p-8 hover:border-accent/50 transition-all duration-500 group">
                   {/* Step number and icon */}
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="text-4xl font-bold text-accent/30">{step.number}</span>
+                    <span className="text-4xl text-yellow-600 font-bold text-accent/30">{step.number}</span>
                     <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <step.icon className="w-6 h-6 text-accent" />
                     </div>

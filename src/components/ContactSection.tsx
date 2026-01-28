@@ -62,7 +62,7 @@ const ContactSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-sm font-medium text-muted-foreground">Get In Touch</span>
+            <span className="text-[18px] text-gray-200 font-medium text-muted-foreground">Get In Touch</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-foreground">Let's Build </span>
@@ -159,9 +159,9 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-8 ">
             {/* Contact details */}
-            <div className="glass-card rounded-2xl p-6 space-y-6">
+            <div className="glass-card rounded-2xl p-6 space-y-8 bg-white/5 backdrop-blur-xl border border-white/10">
               <h3 className="text-lg font-semibold text-foreground">Contact Info</h3>
               {contactInfo.map((item, index) => (
                 <a
@@ -183,7 +183,7 @@ const ContactSection = () => {
             </div>
 
             {/* Social links */}
-            <div className="glass-card rounded-2xl p-6">
+            {/* <div className="glass-card rounded-2xl p-6">
               <h3 className="text-lg font-semibold text-foreground mb-4">Follow Us</h3>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => (
@@ -197,7 +197,7 @@ const ContactSection = () => {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Quick response promise */}
             <div className="glass-card rounded-2xl p-6 border-l-4 border-highlight">

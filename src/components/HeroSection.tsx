@@ -13,14 +13,14 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 py-12">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left side - Typography */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-8 mt-12">
             {/* Floating badge */}
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-card animate-fade-in">
               <div className="relative">
                 <div className="w-2 h-2 bg-accent rounded-full" />
                 <div className="absolute inset-0 w-2 h-2 bg-accent rounded-full animate-ping" />
               </div>
-              <span className="text-sm font-medium text-foreground/80">
+              <span className="text-[15px] font-medium text-foreground/80">
                 Now accepting new projects
               </span>
               <Sparkles className="w-4 h-4 text-highlight" />
@@ -93,14 +93,13 @@ const HeroSection = () => {
       </div>
 
       {/* Corner decorations */}
-      <div className="absolute top-8 left-8 flex items-center gap-2 text-xs text-muted-foreground font-mono">
+      {/* <div className="absolute top-8 left-8 flex items-center gap-2 text-xs text-muted-foreground font-mono">
         <div className="w-4 h-px bg-accent" />
         <span>01</span>
-      </div>
-      <div className="absolute top-8 right-8 flex items-center gap-2 text-xs text-muted-foreground font-mono">
-        <span>HERO</span>
+      </div> */}
+      {/* <div className="absolute top-8 right-8 flex items-center gap-2 text-xs text-muted-foreground font-mono">
         <div className="w-4 h-px bg-highlight" />
-      </div>
+      </div> */}
     </section>
   );
 };
