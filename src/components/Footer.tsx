@@ -1,5 +1,5 @@
 import { Zap, ArrowUpRight } from 'lucide-react';
-
+import Saralstack from '../../public/SaralStackLogo (2).png';
 const footerLinks = {
   services: [
     { name: 'Web Development', href: '#services' },
@@ -29,10 +29,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <a href="#" className="flex items-center gap-3 mb-6 group">
+            <a href="#" className="flex items-center gap-3 mb-1 group">
               <div className="relative">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-highlight flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-5 h-5 text-background" />
+                <div className="w-20 h-20 rounded-lg to-highlight flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                  <img src={Saralstack} alt="SaralStack Logo" />
                 </div>
               </div>
               <span className="text-xl font-bold tracking-tight">
@@ -41,8 +41,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Premium IT solutions at startup-friendly prices. We simplify technology for businesses of all sizes.
-            </p>
+              You see your product being built-collaborative, transparent development with scalable engineering at startup-friendly pricing, so you’re part of the process, not just the client.  </p>
             <div className="flex items-center gap-2 text-sm">
               <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span className="text-muted-foreground">Accepting new projects</span>

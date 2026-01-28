@@ -1,5 +1,5 @@
 import { Users, Repeat, Zap, TrendingUp } from 'lucide-react';
-
+import saralstack from '../../public/SaralStackLogo (2).png';
 const values = [
   { 
     icon: Users, 
@@ -45,7 +45,7 @@ const AboutSection = () => {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-[24px] text-gray-300 font-medium text-muted-foreground">About SaralStack</span>
+              <span className="text-[24px] text-gray-200 font-medium text-muted-foreground">About SaralStack</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -120,7 +120,7 @@ const AboutSection = () => {
                         }`}>
                           <item.icon className={`w-5 h-5 ${isAccent ? 'text-accent' : 'text-highlight'}`} />
                         </div>
-                        <span className={`text-4xl font-bold ${isAccent ? 'text-accent/15' : 'text-highlight/15'}`}>
+                        <span className={`text-4xl font-bold ${isAccent ? 'text-white' : 'text-white'}`}>
                           {item.number}
                         </span>
                       </div>
@@ -136,7 +136,7 @@ const AboutSection = () => {
                       </div>
                       
                       {/* Description */}
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-gray-450 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -146,13 +146,13 @@ const AboutSection = () => {
             </div>
 
             {/* Quote card */}
-            <div className="mt-8 glass-card rounded-2xl p-6 border-l-4 border-accent">
+            <div className="mt-8 glass-card rounded-2xl p-4 border-l-4 border-accent">
               <p className="text-foreground italic mb-4">
                 "Technology should empower, not overwhelm. We build solutions that grow with your business."
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-highlight flex items-center justify-center text-sm font-bold text-background">
-                  S
+                <div className="w-20 h-20 rounded-full  to-highlight flex items-center justify-center text-sm font-bold text-background">
+                  <img src={saralstack} alt="SaralStack Logo" />
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">SaralStack Team</div>

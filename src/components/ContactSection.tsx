@@ -6,15 +6,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'hello@saralstack.com', href: 'mailto:hello@saralstack.com' },
-  { icon: Phone, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
+  { icon: Mail, label: 'Email', value: 'saralstack.info@gmail.com', href: 'mailto:saralstack.info@gmail.com' },
+  { icon: Phone, label: 'Phone', value: '+91 7410128253', href: 'tel:+917410128253' },
   { icon: MapPin, label: 'Location', value: 'India (Remote-First)', href: '#' },
-];
-
-const socialLinks = [
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Github, label: 'GitHub', href: '#' },
 ];
 
 const ContactSection = () => {
@@ -62,7 +56,7 @@ const ContactSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-[24px] text-gray-300 font-medium text-muted-foreground">Get In Touch</span>
+            <span className="text-[24px] text-gray-200 font-medium text-muted-foreground">Get In Touch</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-foreground">Let's Build </span>
