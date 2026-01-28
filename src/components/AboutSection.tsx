@@ -1,10 +1,34 @@
-import { Users, Target, Zap, Award } from 'lucide-react';
+import { Users, Repeat, Zap, TrendingUp } from 'lucide-react';
 
-const stats = [
-  { icon: Users, value: 'Client-First', label: 'Our Core Value' },
-  { icon: Target, value: 'Agile', label: 'Development Process' },
-  { icon: Zap, value: 'Fast', label: 'Delivery Timeline' },
-  { icon: Award, value: 'Affordable', label: 'Pricing Model' },
+const values = [
+  { 
+    icon: Users, 
+    number: '01', 
+    title: 'Client-First', 
+    description: 'Your vision drives every decision',
+    color: 'accent' as const,
+  },
+  { 
+    icon: Repeat, 
+    number: '02', 
+    title: 'Agile Process', 
+    description: 'Transparent iterations with feedback',
+    color: 'highlight' as const,
+  },
+  { 
+    icon: Zap, 
+    number: '03', 
+    title: 'Rapid Delivery', 
+    description: 'Launch faster, quality intact',
+    color: 'highlight' as const,
+  },
+  { 
+    icon: TrendingUp, 
+    number: '04', 
+    title: 'Smart Pricing', 
+    description: 'Enterprise quality, startup rates',
+    color: 'accent' as const,
+  },
 ];
 
 const AboutSection = () => {
@@ -64,21 +88,61 @@ const AboutSection = () => {
             <div className="absolute -top-8 -left-8 w-32 h-32 border border-accent/20 rounded-full animate-spin-slow" />
             <div className="absolute -bottom-8 -right-8 w-24 h-24 border border-highlight/20 rotate-45" />
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="glass-card rounded-2xl p-6 text-center hover:border-accent/50 transition-all duration-300 group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <stat.icon className="w-7 h-7 text-accent" />
+            {/* Elegant value cards with visual appeal */}
+            <div className="grid grid-cols-2 gap-4">
+              {values.map((item, index) => {
+                const isAccent = item.color === 'accent';
+                return (
+                  <div
+                    key={index}
+                    className="group relative rounded-2xl overflow-hidden"
+                  >
+                    {/* Gradient background */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${
+                      isAccent 
+                        ? 'from-accent/10 via-accent/5 to-transparent' 
+                        : 'from-highlight/10 via-highlight/5 to-transparent'
+                    }`} />
+                    
+                    {/* Border glow effect */}
+                    <div className={`absolute inset-0 rounded-2xl border ${
+                      isAccent ? 'border-accent/20' : 'border-highlight/20'
+                    }`} />
+                    
+                    {/* Content */}
+                    <div className="relative p-6 h-full flex flex-col">
+                      {/* Top row - Icon and number */}
+                      <div className="flex items-center justify-between mb-5">
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                          isAccent 
+                            ? 'bg-accent/15 border border-accent/30' 
+                            : 'bg-highlight/15 border border-highlight/30'
+                        }`}>
+                          <item.icon className={`w-5 h-5 ${isAccent ? 'text-accent' : 'text-highlight'}`} />
+                        </div>
+                        <span className={`text-4xl font-bold ${isAccent ? 'text-accent/15' : 'text-highlight/15'}`}>
+                          {item.number}
+                        </span>
+                      </div>
+                      
+                      {/* Title with gradient underline */}
+                      <div className="mb-3">
+                        <h4 className="text-xl font-bold text-foreground tracking-tight mb-2">
+                          {item.title}
+                        </h4>
+                        <div className={`w-12 h-0.5 rounded-full bg-gradient-to-r ${
+                          isAccent ? 'from-accent to-accent/30' : 'from-highlight to-highlight/30'
+                        }`} />
+                      </div>
+                      
+                      {/* Description */}
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Quote card */}
