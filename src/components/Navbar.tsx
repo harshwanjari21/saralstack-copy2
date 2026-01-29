@@ -52,7 +52,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
+                className="relative px-4 py-2 text-md font-medium text-muted-foreground hover:text-foreground transition-colors group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-accent to-highlight group-hover:w-3/4 transition-all duration-300" />
@@ -62,9 +62,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="hero" size="default" className="group">
-              <span>Get Started</span>
-              <div className="w-1.5 h-1.5 rounded-full bg-accent-foreground group-hover:animate-ping" />
+            <Button variant="hero" size="default" className="group" asChild>
+              <a href="#contact" className="flex items-center gap-2">
+                <span>Get Started</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-accent-foreground group-hover:animate-ping" />
+              </a>
             </Button>
           </div>
 
@@ -94,8 +96,10 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="hero" size="default" className="mt-2">
-              Get Started
+            <Button variant="hero" size="default" className="mt-2" asChild>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center">
+                Get Started
+              </a>
             </Button>
           </div>
         </div>

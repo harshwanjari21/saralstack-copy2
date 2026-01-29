@@ -20,7 +20,7 @@ const HeroSection = () => {
                 <div className="w-2 h-2 bg-accent rounded-full" />
                 <div className="absolute inset-0 w-2 h-2 bg-accent rounded-full animate-ping" />
               </div>
-              <span className="text-[18px] font-medium text-foreground/80">
+              <span className="text-[18px] font-medium text-gray-200">
                 Now accepting new projects
               </span>
               <Sparkles className="w-4 h-4 text-highlight" />

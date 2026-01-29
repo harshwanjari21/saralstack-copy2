@@ -1,4 +1,4 @@
-import { Globe, Smartphone, Palette, RefreshCcw, Search, ArrowUpRight } from 'lucide-react';
+import { Globe, Smartphone, Palette, RefreshCcw, Search, ArrowUpRight, Blocks } from 'lucide-react';
 
 const services = [
   {
@@ -36,6 +36,13 @@ const services = [
     tags: ['Technical SEO', 'Analytics', 'Content'],
     color: 'accent',
   },
+  {
+  icon: Blocks,
+  title: 'Web3 Tools & Integrations',
+  description: 'Web3 mini apps, platform integrations, websites, and custom Discord/Telegram bots with webhook integration and automation scripts for Web3 products and platforms.',
+  tags: ['Web3 Mini Apps', 'Integrations', 'Discord/Telegram Bots', 'Webhooks'],
+  color: 'accent',
+}
 ];
 
 const ServicesSection = () => {
@@ -51,7 +58,7 @@ const ServicesSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-[24px] text-gray-300 font-medium text-muted-foreground">What We Offer</span>
+            <span className="text-[24px] text-gray-200 font-medium text-muted-foreground">What We Offer</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-foreground">Services That </span>
