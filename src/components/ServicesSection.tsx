@@ -37,12 +37,12 @@ const services = [
     color: 'accent',
   },
   {
-  icon: Blocks, // or Cube / Network / Link from your icon set
-  title: 'Web3 Development',
-  description: 'Build decentralized applications, smart contracts, and blockchain-integrated systems with scalable, secure architecture.',
-  tags: ['Smart Contracts', 'DApps', 'Blockchain'],
+  icon: Blocks,
+  title: 'Web3 Tools & Integrations',
+  description: 'Web3 mini apps, platform integrations, websites, and custom Discord/Telegram bots with webhook integration and automation scripts for Web3 products and platforms.',
+  tags: ['Web3 Mini Apps', 'Integrations', 'Discord/Telegram Bots', 'Webhooks'],
   color: 'accent',
-},
+}
 ];
 
 const ServicesSection = () => {
