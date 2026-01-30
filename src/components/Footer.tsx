@@ -1,5 +1,6 @@
 import { Zap, ArrowUpRight } from 'lucide-react';
 import Saralstack from '../../public/SaralStackLogo (2).png';
+
 const footerLinks = {
   services: [
     { name: 'Web Development', href: '#services' },
@@ -7,6 +8,7 @@ const footerLinks = {
     { name: 'UI/UX Design', href: '#services' },
     { name: 'Website Rework', href: '#services' },
     { name: 'SEO Optimization', href: '#services' },
+    { name: 'Web3 Tools & Integrations', href: '#services' },
   ],
   company: [
     { name: 'About Us', href: '#about' },
@@ -90,13 +92,12 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Have an idea? Let's bring it to life together.
             </p>
-            <a
+            {/* <a
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-accent-foreground font-medium text-sm hover:scale-105 transition-transform shadow-lg shadow-accent/25"
-            >
-              Get in Touch
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
+            > */}
+              {/* <ArrowUpRight className="w-4 h-4" /> */}
+            {/* </a> */}
           </div>
         </div>
       </div>

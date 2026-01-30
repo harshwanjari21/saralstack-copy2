@@ -65,7 +65,6 @@ const Navbar = () => {
             <Button variant="hero" size="default" className="group" asChild>
               <a href="#contact" className="flex items-center gap-2">
                 <span>Get Started</span>
-                <div className="w-1.5 h-1.5 rounded-full bg-accent-foreground group-hover:animate-ping" />
               </a>
             </Button>
           </div>

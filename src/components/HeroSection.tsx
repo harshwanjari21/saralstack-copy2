@@ -49,8 +49,10 @@ const HeroSection = () => {
             {/* CTA Section */}
             <div className="flex flex-wrap items-center gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button variant="hero" size="lg" className="group text-base">
+                <a href="#contact" className="flex items-center gap-2">
                 <span>Start Your Project</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </div>
 
