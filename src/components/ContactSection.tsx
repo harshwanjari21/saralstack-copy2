@@ -145,33 +145,33 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-32 bg-secondary/20 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 bg-secondary/20 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute top-0 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-highlight/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-card mb-4 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
 
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="text-foreground">Let's Build </span>
             <span className="text-gradient">Something Great</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             Ready to start your project? Drop us a message and we'll get back to you within 24 hours.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 bg-white/5 backdrop-blur-xl border border-white/10">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-xl border border-white/10">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-foreground">
                     Your Name *
@@ -203,7 +203,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-4 sm:mb-6">
                 <label htmlFor="company" className="text-sm font-medium text-foreground">
                   Company / Organization
                 </label>
@@ -217,7 +217,7 @@ const ContactSection = () => {
                 />
               </div>
 
-              <div className="space-y-2 mb-8">
+              <div className="space-y-2 mb-6 sm:mb-8">
                 <label htmlFor="message" className="text-sm font-medium text-foreground">
                   Project Details *
                 </label>
@@ -253,25 +253,25 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-8 ">
+          <div className="lg:col-span-2 space-y-6 sm:space-y-8">
             {/* Contact details */}
-            <div className="glass-card rounded-2xl p-6 space-y-8 bg-white/5 backdrop-blur-xl border border-white/10">
-              <h3 className="text-lg font-semibold text-foreground">Contact Info</h3>
+            <div className="glass-card rounded-2xl p-4 sm:p-6 space-y-6 sm:space-y-8 bg-white/5 backdrop-blur-xl border border-white/10">
+              <h3 className="text-base sm:text-lg font-semibold text-foreground">Contact Info</h3>
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <item.icon className="w-5 h-5 text-accent" />
+                <div key={index} className="flex items-start gap-3 sm:gap-4 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                   </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">{item.label}</div>
+                  <div className="min-w-0">
+                    <div className="text-xs sm:text-sm text-muted-foreground">{item.label}</div>
                     {item.values ? (
                       item.values.map((v, i) => (
-                        <a key={i} href={v.href} className="text-foreground font-medium block group-hover:text-accent transition-colors">
+                        <a key={i} href={v.href} className="text-sm sm:text-base text-foreground font-medium block group-hover:text-accent transition-colors break-words">
                           {v.value}
                         </a>
                       ))
                     ) : (
-                      <a href={item.href} className="text-foreground font-medium group-hover:text-accent transition-colors">
+                      <a href={item.href} className="text-sm sm:text-base text-foreground font-medium group-hover:text-accent transition-colors break-words">
                         {item.value}
                       </a>
                     )}
@@ -281,12 +281,12 @@ const ContactSection = () => {
             </div>
 
             {/* Quick response promise */}
-            <div className="glass-card rounded-2xl p-6 border-l-4 border-highlight">
+            <div className="glass-card rounded-2xl p-4 sm:p-6 border-l-4 border-highlight">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-3 h-3 rounded-full bg-highlight animate-pulse" />
-                <span className="text-sm font-medium text-highlight">Quick Response</span>
+                <span className="text-xs sm:text-sm font-medium text-highlight">Quick Response</span>
               </div>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-xs sm:text-sm">
                 We typically respond within 24 hours. For urgent inquiries, give us a call!
               </p>
             </div>

@@ -40,63 +40,63 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="relative py-32 bg-secondary/20 overflow-hidden">
+    <section id="process" className="relative py-16 sm:py-24 lg:py-32 bg-secondary/20 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-3/4 bg-gradient-to-b from-transparent via-accent/50 to-transparent" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-3/4 bg-gradient-to-b from-transparent via-accent/50 to-transparent hidden md:block" />
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-card mb-4 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-highlight animate-pulse" />
-            <span className="text-[24px] text-gray-200 font-medium text-muted-foreground">How We Work</span>
+            <span className="text-sm sm:text-base md:text-lg lg:text-[24px] text-gray-200 font-medium text-muted-foreground">How We Work</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="text-foreground">Our Agile </span>
             <span className="text-gradient">Process</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             You're not just a client — you're part of the team. Our transparent, collaborative approach keeps you involved at every step.
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
-          {/* Vertical line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-highlight to-accent opacity-30" />
+          {/* Vertical line - responsive positioning */}
+          <div className="absolute left-4 sm:left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-highlight to-accent opacity-30" />
 
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`relative flex items-start gap-8 mb-16 last:mb-0 ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              className={`relative flex items-start gap-4 sm:gap-8 mb-12 sm:mb-16 last:mb-0 md:${
+                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
               }`}
             >
               {/* Timeline node */}
-              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-2 border-accent z-10">
+              <div className="absolute left-[15px] sm:left-[31px] md:left-1/2 -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-background border-2 border-accent z-10">
                 <div className="absolute inset-0 rounded-full bg-accent animate-ping opacity-25" />
               </div>
 
               {/* Content card */}
-              <div className={`ml-20 md:ml-0 md:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                <div className="glass-card rounded-2xl p-6 md:p-8 hover:border-accent/50 transition-all duration-500 group">
+              <div className={`ml-10 sm:ml-20 md:ml-0 md:w-[calc(50%-2rem)] lg:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                <div className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-accent/50 transition-all duration-500 group">
                   {/* Step number and icon */}
-                  <div className="flex items-center gap-52 mb-4">
-                    <span className="text-4xl text-yellow-600 font-bold text-accent/30">{step.number}</span>
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <step.icon className="w-6 h-6 text-accent" />
+                  <div className="flex items-center justify-between gap-4 mb-3 sm:mb-4">
+                    <span className="text-2xl sm:text-3xl lg:text-4xl text-yellow-600 font-bold text-accent/30">{step.number}</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                      <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                     </div>
                   </div>
 
                   {/* Title and description */}
-                  <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{step.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">{step.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">{step.description}</p>
 
                   {/* Highlight badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20">
+                  <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-accent/10 border border-accent/20">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                    <span className="text-sm font-medium text-green-300">{step.highlight}</span>
+                    <span className="text-xs sm:text-sm font-medium text-green-300">{step.highlight}</span>
                   </div>
                 </div>
               </div>

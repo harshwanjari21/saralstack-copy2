@@ -27,24 +27,24 @@ const Footer = () => {
   return (
     <footer className="relative bg-background border-t border-border/50">
       {/* Top section */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <a href="#" className="flex items-center gap-3 mb-1 group">
+            <a href="#" className="flex items-center gap-2 sm:gap-3 mb-4 group">
               <div className="relative">
-                <div className="w-20 h-20 rounded-lg to-highlight flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-lg to-highlight flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                   <img src={Saralstack} alt="SaralStack Logo" />
                 </div>
               </div>
-              <span className="text-xl font-bold tracking-tight">
+              <span className="text-lg sm:text-xl font-bold tracking-tight">
                 <span className="text-foreground">Saral</span>
                 <span className="text-accent">Stack</span>
               </span>
             </a>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
               You see your product being built-collaborative, transparent development with scalable engineering at startup-friendly pricing, so you’re part of the process, not just the client.  </p>
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 text-xs sm:text-sm">
               <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span className="text-muted-foreground">Accepting new projects</span>
             </div>
@@ -52,13 +52,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Services</h4>
-            <ul className="space-y-3">
+            <h4 className="text-sm sm:text-base text-foreground font-semibold mb-3 sm:mb-4">Services</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -70,13 +70,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="text-sm sm:text-base text-foreground font-semibold mb-3 sm:mb-4">Company</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.name}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -88,8 +88,8 @@ const Footer = () => {
 
           {/* CTA */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Start a Project</h4>
-            <p className="text-sm text-muted-foreground mb-4">
+            <h4 className="text-sm sm:text-base text-foreground font-semibold mb-3 sm:mb-4">Start a Project</h4>
+            <p className="text-xs sm:text-sm text-muted-foreground mb-4">
               Have an idea? Let's bring it to life together.
             </p>
             {/* <a
@@ -104,17 +104,17 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-border/50">
-        <div className="container mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
+        <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+            <p className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
               © {currentYear} SaralStack. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6">
               {footerLinks.legal.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.name}
                 </a>
