@@ -47,34 +47,34 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-32 bg-background overflow-hidden">
+    <section id="services" className="relative py-16 sm:py-24 lg:py-32 bg-background overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid opacity-30" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-highlight/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-highlight/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-card mb-4 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-[24px] text-gray-200 font-medium text-muted-foreground">What We Offer</span>
+            <span className="text-sm sm:text-base md:text-lg lg:text-[24px] text-gray-200 font-medium text-muted-foreground">What We Offer</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="text-foreground">Services That </span>
             <span className="text-gradient">Drive Growth</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             From concept to deployment, we deliver end-to-end IT solutions that transform your business vision into reality.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative glass-card rounded-2xl p-8 hover:border-accent/50 transition-all duration-500 hover:-translate-y-2"
+              className="group relative glass-card rounded-2xl p-6 sm:p-8 hover:border-accent/50 transition-all duration-500 hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Hover glow effect */}
@@ -82,16 +82,16 @@ const ServicesSection = () => {
 
               <div className="relative z-10">
                 {/* Icon */}
-                <div className={`w-14 h-14 rounded-xl bg-${service.color}/10 border border-${service.color}/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className={`w-7 h-7 ${service.color === 'accent' ? 'text-accent' : 'text-highlight'}`} />
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-${service.color}/10 border border-${service.color}/20 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${service.color === 'accent' ? 'text-accent' : 'text-highlight'}`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3 flex items-center gap-2">
                   {service.title}
-                  <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                  <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
@@ -100,7 +100,7 @@ const ServicesSection = () => {
                   {service.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-secondary/50 text-foreground/70 border border-border/50"
+                      className="px-2.5 sm:px-3 py-0.5 sm:py-1 text-xs font-medium rounded-full bg-secondary/50 text-foreground/70 border border-border/50"
                     >
                       {tag}
                     </span>
@@ -109,7 +109,7 @@ const ServicesSection = () => {
               </div>
 
               {/* Corner decoration */}
-              <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-border/30 rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-4 right-4 w-6 h-6 sm:w-8 sm:h-8 border-t border-r border-border/30 rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           ))}
         </div>
