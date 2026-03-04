@@ -80,7 +80,7 @@ saralstack/
 ## Features
 
 - 📱 Fully responsive design
-- 🎨 Modern, clean UI with glass-morphism effects
+- 🎨 Modern, clean UI with glass-morphism effects 
 - ✨ Smooth animations and transitions
 - 🌙 Dark theme optimized
 - ♿ Accessible components
