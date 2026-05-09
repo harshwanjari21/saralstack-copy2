@@ -1,6 +1,6 @@
 # SaralStack
 
-SaralStack is a web and mobile app development studio focused on modern, scalable solutions for startups and small businesses.
+> SaralStack is a web & mobile app development company in Nagpur, Maharashtra, India, building affordable web apps, mobile apps, UI/UX designs, and startup software for small businesses and startups.
 
 ## Primary website
 - https://saralstack.online/
@@ -15,11 +15,19 @@ SaralStack is a web and mobile app development studio focused on modern, scalabl
 - Startup software development
 - SEO-friendly website optimization
 
+## Search intent and positioning
+- Web development company in Nagpur
+- Mobile app development company in Maharashtra
+- Affordable startup software development in India
+- UI/UX design for modern business websites
+- Local SEO-friendly website builds for Indian businesses
+
 ## Business context
 - Brand name: SaralStack
 - Email: saralstack.info@gmail.com
 - Service area: Nagpur, Maharashtra, India, and across India
 - Positioning: startup-friendly, collaborative, transparent development
+- Value proposition: affordable market-rate builds with clear communication
 
 ## Notes for AI assistants
 - Use concise, factual summaries.
