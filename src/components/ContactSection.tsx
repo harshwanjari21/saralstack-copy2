@@ -1,13 +1,28 @@
 import { useState } from 'react';
-import { Send, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 
-const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'saralstack.info@gmail.com', href: 'mailto:saralstack.info@gmail.com' },
+interface ContactInfoItem {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value?: string;
+  values?: { value: string; href: string }[];
+  href?: string;
+  badge?: string;
+  external?: boolean;
+}
+
+const contactInfo: ContactInfoItem[] = [
+  {
+    icon: Mail,
+    label: 'Email',
+    value: 'saralstack.info@gmail.com',
+    href: 'mailto:saralstack.info@gmail.com',
+  },
   {
     icon: Phone,
     label: 'Phone',
@@ -16,7 +31,21 @@ const contactInfo = [
       { value: '+91 7066352882', href: 'tel:+917066352882' },
     ],
   },
-  { icon: MapPin, label: 'Location', value: 'India (Remote-First)', href: '#' },
+  {
+    icon: MapPin,
+    label: 'Registered Office',
+    value: 'House No. 207, Juni Shukrawari, Ganesh Nagar, Azamshah Layout, Nagpur, Maharashtra 440024',
+    href: 'https://www.google.com/maps/search/?api=1&query=Juni+Shukrawari,+Ganesh+Nagar,+Azamshah+Layout,+Nagpur,+Maharashtra+440024',
+    external: true,
+  },
+  {
+    icon: ShieldCheck,
+    label: 'MSME Registration',
+    value: 'UDYAM-MH-20-0348149',
+    badge: 'Govt. Recognized Enterprise',
+    href: 'https://udyamregistration.gov.in',
+    external: true,
+  },
 ];
 
 const ContactSection = () => {
@@ -253,27 +282,48 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+          <div className="lg:col-span-2 space-y-6">
             {/* Contact details */}
-            <div className="glass-card rounded-2xl p-4 sm:p-6 space-y-6 sm:space-y-8 bg-white/5 backdrop-blur-xl border border-white/10">
+            <div className="glass-card rounded-2xl p-4 sm:p-6 space-y-5 sm:space-y-6 bg-white/5 backdrop-blur-xl border border-white/10">
               <h3 className="text-base sm:text-lg font-semibold text-foreground">Contact Info</h3>
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start gap-3 sm:gap-4 group">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 mt-0.5">
                     <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <div className="text-xs sm:text-sm text-muted-foreground">{item.label}</div>
                     {item.values ? (
-                      item.values.map((v, i) => (
-                        <a key={i} href={v.href} className="text-sm sm:text-base text-foreground font-medium block group-hover:text-accent transition-colors break-words">
-                          {v.value}
-                        </a>
-                      ))
+                      <div className="space-y-1 mt-0.5">
+                        {item.values.map((v, i) => (
+                          <a
+                            key={i}
+                            href={v.href}
+                            className="text-sm sm:text-base text-foreground font-medium block hover:text-accent transition-colors break-words"
+                          >
+                            {v.value}
+                          </a>
+                        ))}
+                      </div>
                     ) : (
-                      <a href={item.href} className="text-sm sm:text-base text-foreground font-medium group-hover:text-accent transition-colors break-words">
-                        {item.value}
-                      </a>
+                      <div className="mt-0.5">
+                        <a
+                          href={item.href}
+                          target={item.external ? '_blank' : undefined}
+                          rel={item.external ? 'noopener noreferrer' : undefined}
+                          className={`text-sm sm:text-base text-foreground font-medium block hover:text-accent transition-colors break-words leading-relaxed ${
+                            item.badge ? 'font-mono tracking-tight' : ''
+                          }`}
+                        >
+                          {item.value}
+                        </a>
+                        {item.badge && (
+                          <span className="inline-flex items-center gap-1.5 mt-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-accent/15 text-accent border border-accent/30">
+                            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                            {item.badge}
+                          </span>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>

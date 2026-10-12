@@ -1,4 +1,4 @@
-import { Zap, ArrowUpRight } from 'lucide-react';
+import { Zap, ArrowUpRight, ShieldCheck } from 'lucide-react';
 import Saralstack from '../../public/SaralStackLogo (2).png';
 
 const footerLinks = {
@@ -86,18 +86,29 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* CTA */}
+          {/* Registered Office & MSME */}
           <div>
-            <h4 className="text-sm sm:text-base text-foreground font-semibold mb-3 sm:mb-4">Start a Project</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-              Have an idea? Let's bring it to life together.
-            </p>
-            {/* <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-accent-foreground font-medium text-sm hover:scale-105 transition-transform shadow-lg shadow-accent/25"
-            > */}
-              {/* <ArrowUpRight className="w-4 h-4" /> */}
-            {/* </a> */}
+            <h4 className="text-sm sm:text-base text-foreground font-semibold mb-3 sm:mb-4">Registered Office</h4>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Juni+Shukrawari,+Ganesh+Nagar,+Azamshah+Layout,+Nagpur,+Maharashtra+440024"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors leading-relaxed block mb-4 group"
+            >
+              <span>House No. 207, Juni Shukrawari, Ganesh Nagar, Azamshah Layout, Nagpur, Maharashtra 440024</span>
+              <ArrowUpRight className="w-3 h-3 inline ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-accent/5 border border-accent/20">
+              <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0" />
+              <div className="min-w-0">
+                <span className="text-[10px] uppercase font-semibold tracking-wider text-muted-foreground block">
+                  MSME Registration
+                </span>
+                <span className="text-xs font-mono font-medium text-foreground">
+                  UDYAM-MH-20-0348149
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -106,9 +117,15 @@ const Footer = () => {
       <div className="border-t border-border/50">
         <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
-            <p className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
-              © {currentYear} SaralStack. All rights reserved.
-            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center md:text-left">
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                © {currentYear} SaralStack. All rights reserved.
+              </p>
+              <span className="hidden sm:inline text-border">•</span>
+              <p className="text-xs text-muted-foreground">
+                MSME: <span className="text-foreground font-medium font-mono">UDYAM-MH-20-0348149</span>
+              </p>
+            </div>
             <div className="flex items-center gap-4 sm:gap-6">
               {footerLinks.legal.map((link, index) => (
                 <a
