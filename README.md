@@ -1,73 +1,137 @@
-# Welcome to your Lovable project
+# SaralStack
 
-## Project info
+A modern, responsive web application built with cutting-edge technologies to deliver seamless user experiences.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## About
 
-## How can I edit this code?
+SaralStack showcases our agile development process, services, and collaborative approach to building digital solutions. The application features an interactive UI with smooth animations, responsive design, and a clean, professional aesthetic.
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js (v18 or higher) - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- npm or bun package manager
 
-Changes made via Lovable will be committed automatically to this repo.
+### Installation
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+1. Clone the repository:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+cd saralstack
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies:
+```sh
+npm install
+# or
+bun install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server:
+```sh
+npm run dev
+# or
+bun dev
+```
 
-**Use GitHub Codespaces**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Available Scripts
 
-## What technologies are used for this project?
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality
+- `npm test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
 
-This project is built with:
+## Technologies
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is built with modern web technologies:
 
-## How can I deploy this project?
+- **Vite** - Fast build tool and development server
+- **React** - UI library for building interactive interfaces
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality, accessible UI components
+- **Radix UI** - Unstyled, accessible component primitives
+- **React Query** - Data fetching and state management
+- **Framer Motion** - Animation library
+- **Lucide React** - Beautiful icon set
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Project Structure
 
-## Can I connect a custom domain to my Lovable project?
+```
+saralstack/
+├── src/
+│   ├── components/      # Reusable UI components
+│   │   ├── ui/         # shadcn/ui components
+│   │   └── ...         # Custom components
+│   ├── pages/          # Page components
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions
+│   └── test/           # Test files
+├── public/             # Static assets
+└── ...
+```
 
-Yes, you can!
+## Features
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- 📱 Fully responsive design
+- 🎨 Modern, clean UI with glass-morphism effects 
+- ✨ Smooth animations and transitions
+- 🌙 Dark theme optimized
+- ♿ Accessible components
+- 🧪 Unit testing with Vitest
+- 🎯 TypeScript for type safety
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Development
+
+### Code Quality
+
+The project uses ESLint for code quality. Run linting with:
+```sh
+npm run lint
+```
+
+### Testing
+
+Run tests using Vitest:
+```sh
+npm test          # Run once
+npm run test:watch # Watch mode
+```
+
+## Deployment
+
+### Build for Production
+
+```sh
+npm run build
+```
+
+The build output will be in the `dist/` directory, ready for deployment to any static hosting service.
+
+### Preview Production Build
+
+```sh
+npm run preview
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is private and proprietary.
+
+---
+
+Built with ❤️ by SaralStack Team

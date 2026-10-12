@@ -66,21 +66,25 @@ const ProcessSection = () => {
           {/* Vertical line - responsive positioning */}
           <div className="absolute left-4 sm:left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-highlight to-accent opacity-30" />
 
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`relative flex items-start gap-4 sm:gap-8 mb-12 sm:mb-16 last:mb-0 md:${
-                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-              }`}
-            >
-              {/* Timeline node */}
-              <div className="absolute left-[15px] sm:left-[31px] md:left-1/2 -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-background border-2 border-accent z-10">
-                <div className="absolute inset-0 rounded-full bg-accent animate-ping opacity-25" />
-              </div>
+          {steps.map((step, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div
+                key={index}
+                className={`relative flex items-start gap-4 sm:gap-8 mb-12 sm:mb-16 last:mb-0 ${
+                  isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
+              >
+                {/* Timeline node */}
+                <div className="absolute left-[15px] sm:left-[31px] md:left-1/2 -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-background border-2 border-accent z-10">
+                  <div className="absolute inset-0 rounded-full bg-accent animate-ping opacity-25" />
+                </div>
 
-              {/* Content card */}
-              <div className={`ml-10 sm:ml-20 md:ml-0 md:w-[calc(50%-2rem)] lg:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                <div className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-accent/50 transition-all duration-500 group">
+                {/* Content card */}
+                <div className={`ml-10 sm:ml-20 md:ml-0 md:w-[calc(50%-2rem)] lg:w-[calc(50%-3rem)] ${
+                  isEven ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'
+                }`}>
+                <div className="glass-card rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-accent/80 transition-all duration-500 group">
                   {/* Step number and icon */}
                   <div className="flex items-center justify-between gap-4 mb-3 sm:mb-4">
                     <span className="text-2xl sm:text-3xl lg:text-4xl text-yellow-600 font-bold text-accent/30">{step.number}</span>
@@ -91,7 +95,7 @@ const ProcessSection = () => {
 
                   {/* Title and description */}
                   <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">{step.title}</h3>
-                  <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">{step.description}</p>
+                  <p className="text-sm sm:text-base text-foreground mb-3 sm:mb-4 leading-relaxed">{step.description}</p>
 
                   {/* Highlight badge */}
                   <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-accent/10 border border-accent/20">
@@ -101,7 +105,8 @@ const ProcessSection = () => {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
